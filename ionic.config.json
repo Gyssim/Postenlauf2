@@ -1,0 +1,8 @@
+{
+  "name": "Postenlauf2",
+  "app_id": "afed3822",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}
