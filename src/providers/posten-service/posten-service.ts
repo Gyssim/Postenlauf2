@@ -27,6 +27,7 @@ export class PostenServiceProvider {
   } 
 
   getItems(){ 
+    console.log("getItems - Posten Provider");
     return this.items; 
   }
 

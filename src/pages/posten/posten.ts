@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { PostendetailPage } from '../postendetail/postendetail';
+import { PostenServiceProvider } from './../../providers/posten-service/posten-service'; 
+import { Observable } from 'rxjs/Observable'; 
 
 
 /**
@@ -17,7 +19,11 @@ import { PostendetailPage } from '../postendetail/postendetail';
 })
 export class PostenPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  needItems: Observable<any[]>; 
+
+  constructor(public navCtrl: NavController, public postenService: PostenServiceProvider, public navParams: NavParams) {
+    console.log(this.postenService.getItems());
+    this.needItems = this.postenService.getItems(); 
   }
 
   ionViewDidLoad() {
@@ -27,5 +33,8 @@ export class PostenPage {
   openPostenDetail(item){
     this.navCtrl.setRoot(PostendetailPage);
   }
+
+  removeItem(id){ 
+   } 
 
 }
